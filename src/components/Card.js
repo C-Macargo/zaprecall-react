@@ -29,9 +29,9 @@ export default function Card({
     const [dataTestIcon, setDataTestIcon] = useState("")
 
     return (
-        <>
+        <div data-test="flashcard">
 
-            <PerguntaFechada data-test="flashcard" display={clickedArrowsList.includes(card) ? true : false} >
+            <PerguntaFechada  display={clickedArrowsList.includes(card) ? true : false} >
                 <p data-test="flashcard-text" >pergunta {cardNumero + 1}</p>
                 <img data-test="play-btn" src={play} alt="buttonplay"
                     onClick={() => {
@@ -91,7 +91,7 @@ export default function Card({
                 <p data-test="flashcard-text" >pergunta {cardNumero + 1}</p>
                 <img data-test={dataTestIcon}   src={finalizedImg}></img>
             </PerguntaFinalizada>
-        </>
+            </div>
     )
 }
 
