@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import cards from "./Cardcontent"
 
-
-export default function Footer(){
+export default function Footer({answerdQuestions}){
 
     return(
         <FooterConcluidos>
-            <p>CONCLUÍDOS</p>
+            <p>CONCLUÍDOS {answerdQuestions} / {cards.length}</p>
         </FooterConcluidos>
     )
 

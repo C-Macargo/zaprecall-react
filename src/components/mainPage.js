@@ -3,8 +3,13 @@ import styled from 'styled-components';
 import Card from "./Card"
 import Cardcontent from"./Cardcontent"
 import Footer from "./Footer"
+import {useState} from "react"
 
 export default function MainPage(){
+
+    const [answerdQuestions, setAnswerdQuestions] = useState(0)
+    const [clickedArrowsList, setClickedArrowsList] = useState([])  
+    const [clickedTurnList, setClickedTurnList] = useState([])  
 
     return (
 
@@ -17,10 +22,16 @@ export default function MainPage(){
         key={index}
         cardNumero={index}
         card={card}
+        clickedArrowsList= {clickedArrowsList}
+        setClickedArrowsList = {setClickedArrowsList}
+        clickedTurnList = {clickedTurnList}
+        setClickedTurnList = {setClickedTurnList}
         />
         ))}
 
-        <Footer/>
+        <Footer
+        answerdQuestions = {answerdQuestions}
+        />
 
     </ScreenContainer>
     )
