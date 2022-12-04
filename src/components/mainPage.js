@@ -10,6 +10,7 @@ export default function MainPage(){
     const [answerdQuestions, setAnswerdQuestions] = useState(0)
     const [clickedArrowsList, setClickedArrowsList] = useState([])  
     const [clickedTurnList, setClickedTurnList] = useState([])  
+    const [clickedAnswerList, setclickedAnswerList] = useState([])  
 
     return (
 
@@ -26,6 +27,10 @@ export default function MainPage(){
         setClickedArrowsList = {setClickedArrowsList}
         clickedTurnList = {clickedTurnList}
         setClickedTurnList = {setClickedTurnList}
+        clickedAnswerList = {clickedAnswerList}
+        setclickedAnswerList = {setclickedAnswerList}
+        setAnswerdQuestions = {setAnswerdQuestions}
+        answerdQuestions = {answerdQuestions}
         />
         ))}
 

@@ -2,6 +2,12 @@
 import styled from 'styled-components';
 import play from "../assets/img/seta_play.png"
 import turn from "../assets/img/seta_virar.png"
+import { useState } from "react"
+import correct from "../assets/img/icone_certo.png"
+import wrong from "../assets/img/icone_erro.png"
+import almost from "../assets/img/icone_quase.png"
+
+
 
 
 export default function Card({
@@ -10,39 +16,81 @@ export default function Card({
     clickedArrowsList,
     setClickedArrowsList,
     setClickedTurnList,
-    clickedTurnList
+    clickedTurnList,
+    clickedAnswerList,
+    setclickedAnswerList,
+    answerdQuestions,
+    setAnswerdQuestions
+
 }) {
 
-    console.log(clickedTurnList)
-
-
+    const [finalizedImg, setFinalizedImg] = useState("")
+    const [finalizedColor, setFinalizedColor] = useState("")
+    const [dataTestIcon, setDataTestIcon] = useState("")
 
     return (
         <>
-        <PerguntaFechada display={clickedArrowsList.includes(card) ? true : false} >
-            <p>pergunta {cardNumero + 1}</p>
-            <img src ={play} alt="buttonplay" 
-                onClick={() => {setClickedArrowsList([...clickedArrowsList, card])
-            }}></img>
-        </PerguntaFechada>
 
-        <PerguntaAberta display={!clickedArrowsList.includes(card) || clickedTurnList.includes(card) ? true : false}>
-            <h1>{card.question}</h1>
-            <img src ={turn} alt="buttonturn"
-                onClick={() => {setClickedTurnList([...clickedTurnList, card])
-            }}></img>
-        </PerguntaAberta>
-        <PerguntaResposta display={!clickedTurnList.includes(card)  ? true : false}>
-            <h1>{card.answer}</h1>
+            <PerguntaFechada data-test="flashcard" display={clickedArrowsList.includes(card) ? true : false} >
+                <p data-test="flashcard-text" >pergunta {cardNumero + 1}</p>
+                <img data-test="play-btn" src={play} alt="buttonplay"
+                    onClick={() => {
+                        setClickedArrowsList([...clickedArrowsList, card])
+                    }}></img>
+            </PerguntaFechada>
+
+            <PerguntaAberta display={!clickedArrowsList.includes(card) || clickedTurnList.includes(card) ? true : false}>
+                <h1 data-test="flashcard-text" >{card.question}</h1>
+                <img data-test="turn-btn" src={turn} alt="buttonturn"
+                    onClick={() => {
+                        setClickedTurnList([...clickedTurnList, card])
+                    }}></img>
+            </PerguntaAberta>
+
+            <PerguntaResposta display={!clickedTurnList.includes(card) || clickedAnswerList.includes(card) ? true : false}>
+                <h1 data-test="flashcard-text" >{card.answer}</h1>
                 <div>
-                <ButtonContainer> Não lembrei</ButtonContainer>
-                <ButtonContainer>Quase não lembrei</ButtonContainer>
-                <ButtonContainer>Zap!</ButtonContainer>
+                    <ButtonContainer data-test="no-btn" color="#FF3030"
+                        onClick={() => {
+                            setclickedAnswerList([...clickedAnswerList, card])
+                            setAnswerdQuestions(answerdQuestions + 1)
+                            setFinalizedImg(wrong)
+                            setFinalizedColor("#FF3030")
+                            setDataTestIcon("no-icon")
+
+                        }}
+                    > Não lembrei</ButtonContainer>
+
+                    <ButtonContainer data-test="partial-btn" color="#FF922E"
+                        onClick={() => {
+                            setclickedAnswerList([...clickedAnswerList, card])
+                            setAnswerdQuestions(answerdQuestions + 1)
+                            setFinalizedImg(almost)
+                            setFinalizedColor("#FF922E")
+                            setDataTestIcon("partial-icon")
+                            
+
+                        }}
+
+                    >Quase não lembrei</ButtonContainer>
+
+                    <ButtonContainer data-test="zap-btn" color="#2FBE34"
+                        onClick={() => {
+                            setclickedAnswerList([...clickedAnswerList, card])
+                            setAnswerdQuestions(answerdQuestions + 1)
+                            setFinalizedImg(correct)
+                            setFinalizedColor("#2FBE34")
+                            setDataTestIcon("zap-icon")
+
+                        }}
+                    >Zap!</ButtonContainer>
+
                 </div>
-        </PerguntaResposta>
-        
-        
-        
+            </PerguntaResposta>
+            <PerguntaFinalizada color={finalizedColor} display={!clickedAnswerList.includes(card) ? true : false}>
+                <p data-test="flashcard-text" >pergunta {cardNumero + 1}</p>
+                <img data-test={dataTestIcon}   src={finalizedImg}></img>
+            </PerguntaFinalizada>
         </>
     )
 }
@@ -61,7 +109,6 @@ const PerguntaFechada = styled.div`
     display:${props => props.display ? 'none' : 'flex'};
     align-items: center;
     justify-content: space-between;
-
 
     p {
     font-family: 'Recursive';
@@ -123,9 +170,9 @@ const PerguntaResposta = styled.div`
     }
     `
 
-
-const ButtonContainer = styled.button `
-
+const ButtonContainer = styled.button`
+    
+    
     width: 90px;
     font-family: 'Recursive';
     font-style: normal;
@@ -137,10 +184,31 @@ const ButtonContainer = styled.button `
     justify-content: center;
     text-align: center;
     color: #FFFFFF;
-    background: blue;
+    background: ${props => props.color} ;
     border-radius: 5px;
     border: 1px solid blue;
     padding:5px;
+`
 
+const PerguntaFinalizada = styled.div`
+    width: 300px;
+    height: 35px;
+    background-color: #FFFFFF;
+    margin: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    display:${props => props.display ? 'none' : 'flex'};
+    align-items: center;
+    justify-content: space-between;
 
+    p {
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color : ${props => props.color} ;
+    text-decoration: line-through;
+}
 `
