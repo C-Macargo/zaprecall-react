@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import cards from "./Cardcontent"
-import correct from "../assets/img/icone_certo.png"
-import wrong from "../assets/img/icone_erro.png"
-import almost from "../assets/img/icone_quase.png"
+
 
 
 export default function Footer({
@@ -13,17 +10,15 @@ export default function Footer({
 
     const iconImg = [...footerIcons]
     return(
-        
-        <FooterConcluidos data-test="footer">
+        <FooterConcluidos data-test="footer" >
 
             <IconHolder>
-                {footerIcons.map((iconImg, index) => <img key ={index}  src ={iconImg} data-test={index}></img>)}
+                {footerIcons.map((iconImg, index) => <img key ={index}  src ={iconImg} ></img>)}
             </IconHolder>
                 <p>CONCLUÍDOS {answerdQuestions}/{cardsSortedsplit.length}</p>
         </FooterConcluidos>
         
     )
-
 }
 
 

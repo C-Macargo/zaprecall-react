@@ -6,7 +6,7 @@ import Footer from "./Footer"
 import {useState} from "react"
 
 export default function MainPage(){
-
+    const [dataTestIcon, setDataTestIcon] = useState("")
     const [cardsSorted] = useState([...Cardcontent.sort( () => .5 - Math.random() )])
     const [cardsSortedsplit] = useState([...cardsSorted.slice(0,6)])
     const [footerIcons, setFooterIcons] = useState([])
@@ -37,6 +37,8 @@ export default function MainPage(){
         answerdQuestions = {answerdQuestions}
         setFooterIcons={setFooterIcons}
         footerIcons = {footerIcons}
+        dataTestIcon = {dataTestIcon}
+        setDataTestIcon = {setDataTestIcon}
         />
         ))}
 

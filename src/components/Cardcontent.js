@@ -6,7 +6,16 @@ const cards = [
 	{ question: "Quando Saruman aprisionou Gandalf na torre de Isengard, como Gandalf conseguiu escapar?", answer: "ele pediu ajuda à uma pequena borboleta e ela chamou uma imensa Águia para tirar Gandalf da torre" },
 	{ question: "Qual é o nome de uma feiticeira elfica muito poderosa que dá para Frodo a Luz de Elendil?", answer: "Galadriel" },
 	{ question: "Qual é o nome do Rei que arranca os dedos de Sauron em A Sociedade do Anel?", answer: "Isildur" },
-	{ question: "Qual é o nome da aranha que paralisa Frodo e o deixa desacordado?", answer: "Laracna" }
+	{ question: "Qual é o nome da aranha que paralisa Frodo e o deixa desacordado?", answer: "Laracna" },
+	{ question: "Onde foram gravados os filmes do Senhor dos Anéis?", answer: "Nova Zelândia." },
+	{ question: "Quem dirigiu as trilogias do Senhor dos Anéis?", answer: "Peter Jackson." },
+	{ question: "Como é o nome da espada de Frodo que brilha quando esta perto dos Orcs?", answer: "Ferroada." },
+	{ question: "São os magos cinza, branco e marrom, respectivamente:", answer: "Gandalf, Saruman e Radagast." },
+	{ question: "Quantos membros havia em a Sociedade do Anel?", answer: "9." },
+	{ question: "Onde vive Saruman?", answer: "Isengard." },
+	{ question: "Qual o apelido de Aragorn?", answer: "Passolargo." },
+	{ question: "A Trilogia O Senhor dos Anéis foi a mais premiada do Óscar. Quantos óscars a trilogia tem no total?", answer: "17." },
+	{ question: "Complete: O portador do anel e seus amigos inicialmente pararam em um vilarejo chamado ___.", answer: "Condado." },
 ]
 
 export default cards
