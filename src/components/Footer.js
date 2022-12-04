@@ -5,10 +5,8 @@ export default function Footer({answerdQuestions}){
 
     return(
         
-        <FooterConcluidos>
-            <div data-test="footer">
-            <p>CONCLUÍDOS {answerdQuestions} / {cards.length}</p>
-            </div>
+        <FooterConcluidos data-test="footer">
+            <p>CONCLUÍDOS {answerdQuestions}/{cards.length}</p>
         </FooterConcluidos>
         
     )
