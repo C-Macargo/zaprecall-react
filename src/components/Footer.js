@@ -1,12 +1,25 @@
 import styled from 'styled-components';
 import cards from "./Cardcontent"
+import correct from "../assets/img/icone_certo.png"
+import wrong from "../assets/img/icone_erro.png"
+import almost from "../assets/img/icone_quase.png"
 
-export default function Footer({answerdQuestions}){
 
+export default function Footer({
+    answerdQuestions,
+    footerIcons,
+    cardsSortedsplit
+}){
+
+    const iconImg = [...footerIcons]
     return(
         
         <FooterConcluidos data-test="footer">
-            <p>CONCLUÍDOS {answerdQuestions}/{cards.length}</p>
+
+            <IconHolder>
+                {footerIcons.map((iconImg, index) => <img key ={index}  src ={iconImg} data-test={index}></img>)}
+            </IconHolder>
+                <p>CONCLUÍDOS {answerdQuestions}/{cardsSortedsplit.length}</p>
         </FooterConcluidos>
         
     )
@@ -30,4 +43,13 @@ const FooterConcluidos = styled.footer`
     font-size: 18px;
     color: #333333;
     padding: 10px;
+`
+
+const IconHolder = styled.div`
+    display:flex;
+
+    img{
+        margin-left: 5px ;
+        margin-bottom: 10px ;
+    }
 `

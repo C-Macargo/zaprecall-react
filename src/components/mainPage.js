@@ -7,10 +7,14 @@ import {useState} from "react"
 
 export default function MainPage(){
 
+    const [cardsSorted] = useState([...Cardcontent.sort( () => .5 - Math.random() )])
+    const [cardsSortedsplit] = useState([...cardsSorted.slice(0,6)])
+    const [footerIcons, setFooterIcons] = useState([])
     const [answerdQuestions, setAnswerdQuestions] = useState(0)
     const [clickedArrowsList, setClickedArrowsList] = useState([])  
     const [clickedTurnList, setClickedTurnList] = useState([])  
     const [clickedAnswerList, setclickedAnswerList] = useState([])  
+
 
     return (
 
@@ -18,7 +22,7 @@ export default function MainPage(){
 
         <Logo/>
 
-        {Cardcontent.map((card, index) => (
+        {cardsSortedsplit.map((card, index) => (
         <Card
         key={index}
         cardNumero={index}
@@ -31,11 +35,15 @@ export default function MainPage(){
         setclickedAnswerList = {setclickedAnswerList}
         setAnswerdQuestions = {setAnswerdQuestions}
         answerdQuestions = {answerdQuestions}
+        setFooterIcons={setFooterIcons}
+        footerIcons = {footerIcons}
         />
         ))}
 
         <Footer
+        cardsSortedsplit = {cardsSortedsplit}
         answerdQuestions = {answerdQuestions}
+        footerIcons = {footerIcons}
         />
 
     </ScreenContainer>

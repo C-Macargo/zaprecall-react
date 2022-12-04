@@ -1,13 +1,14 @@
 import logo from "../assets/img/logo.png"
 import React from 'react';
 import styled from 'styled-components';
-
+import gandalf from "../assets/img/gandalf-icon.png"
 
 export default function Logo(){
         return(
         <LogoConteiner>
         <img src={logo} alt="logo" ></img>
         <h1>Zap Recall</h1>
+        <img src={gandalf} alt="logo" ></img>
         </LogoConteiner>
         )
 }
@@ -31,5 +32,6 @@ const LogoConteiner = styled.header`
         line-height: 45px;
         color: #FFFFFF;
         margin-left: 20px;
+        margin-right: 20px;
     }    
 `;

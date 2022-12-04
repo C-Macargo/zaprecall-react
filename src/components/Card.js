@@ -20,7 +20,9 @@ export default function Card({
     clickedAnswerList,
     setclickedAnswerList,
     answerdQuestions,
-    setAnswerdQuestions
+    setAnswerdQuestions,
+    setFooterIcons,
+    footerIcons
 
 }) {
 
@@ -31,7 +33,7 @@ export default function Card({
     return (
         <div data-test="flashcard">
 
-            <PerguntaFechada  display={clickedArrowsList.includes(card) ? true : false} >
+            <PerguntaFechada display={clickedArrowsList.includes(card) ? true : false} >
                 <p data-test="flashcard-text" >pergunta {cardNumero + 1}</p>
                 <img data-test="play-btn" src={play} alt="buttonplay"
                     onClick={() => {
@@ -57,7 +59,7 @@ export default function Card({
                             setFinalizedImg(wrong)
                             setFinalizedColor("#FF3030")
                             setDataTestIcon("no-icon")
-
+                            setFooterIcons([...footerIcons, wrong])
                         }}
                     > Não lembrei</ButtonContainer>
 
@@ -68,6 +70,7 @@ export default function Card({
                             setFinalizedImg(almost)
                             setFinalizedColor("#FF922E")
                             setDataTestIcon("partial-icon")
+                            setFooterIcons([...footerIcons, almost])
                             
 
                         }}
@@ -81,6 +84,7 @@ export default function Card({
                             setFinalizedImg(correct)
                             setFinalizedColor("#2FBE34")
                             setDataTestIcon("zap-icon")
+                            setFooterIcons([...footerIcons, correct])
 
                         }}
                     >Zap!</ButtonContainer>

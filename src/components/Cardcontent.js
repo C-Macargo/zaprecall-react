@@ -1,12 +1,12 @@
 const cards = [
-	{ question: "O que é JSX?", answer: "Uma extensão da linguagem JavaScript" },
-	{ question: "O React é __", answer: "Uma biblioteca JavaScript para construção de interfaces" },
-	{ question: "Componentes devem iniciar com __", answer: "Letra maiúscula" },
-	{ question: "Podemos colocar __ dentro do JSX", answer: "expressões" },
-	{ question: "O ReactDOM nos ajuda __", answer: "Interagindo com a DOM para colocar componentes React na mesma" },
-	{ question: "Usamos o npm para __", answer: "Gerenciar os pacotes necessários e suas dependências" },
-	{ question: "Usamos props para __", answer: "Passar diferentes informações para componentes" },
-	{ question: "Usamos estado (state) para __", answer: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" }
+	{ question: "Gandalf se tornou um poderoso mago branco após matar uma criatura de sombra e chamas acordada pelos anões chamada de______", answer: "Balrog" },
+	{ question: "Como e por quem os Órcs foram criados?", answer: "Criados por Morgoth, os Orcs faram criados através de Elfos mortos, ou seja, são uma cópia perversa dos Elfos" },
+	{ question: "Por que Aragorn sendo o rei de Gondor optou pelo exílio?", answer: "Pois dizia que a fraqueza de Isildur corria em seu sangue" },
+	{ question: "Como era o nome do pai de Legolas?", answer: "Trandwill" },
+	{ question: "Quando Saruman aprisionou Gandalf na torre de Isengard, como Gandalf conseguiu escapar?", answer: "ele pediu ajuda à uma pequena borboleta e ela chamou uma imensa Águia para tirar Gandalf da torre" },
+	{ question: "Qual é o nome de uma feiticeira elfica muito poderosa que dá para Frodo a Luz de Elendil?", answer: "Galadriel" },
+	{ question: "Qual é o nome do Rei que arranca os dedos de Sauron em A Sociedade do Anel?", answer: "Isildur" },
+	{ question: "Qual é o nome da aranha que paralisa Frodo e o deixa desacordado?", answer: "Laracna" }
 ]
 
 export default cards
